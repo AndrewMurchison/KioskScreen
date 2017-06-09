@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:kiosk">
+
+    <Style x:Key="btnstyle" TargetType="Button">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="#FF74EC8A" Opacity="0.20"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
