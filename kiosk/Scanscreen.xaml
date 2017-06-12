@@ -64,7 +64,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="2" Foreground="White">
+                    <TextBlock Name="time" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="2" Foreground="White">
                         Time
                     </TextBlock>
                     
@@ -73,7 +73,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     Home
                     </Button>
                 </Border>
-
+                
                 <Border Grid.Column="10">
                     <Button>
                         Help?
@@ -134,7 +134,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     <!--Insert Media -->
 
                     <Border Name="img" Height="300" Width="400" BorderThickness="1" BorderBrush="DarkGray" Grid.Row="3" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="8">
-                        <MediaElement Source="../../Images/KioskScanTicket.wmv" Width="{Binding ActualWidth, ElementName=img}" Height="{Binding ActualHeight, ElementName=img}" />
+                        <MediaElement Name="med" Source="../../Images/KioskScanTicket.wmv" Width="{Binding ActualWidth, ElementName=img}" Height="{Binding ActualHeight, ElementName=img}" UnloadedBehavior="Manual" MediaEnded="replayvid" />
                         </Border>
                     <!-- End of Media-->
 
