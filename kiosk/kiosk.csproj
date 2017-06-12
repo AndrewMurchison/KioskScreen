@@ -56,9 +56,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="nav.xaml.cs">
-      <DependentUpon>nav.xaml</DependentUpon>
-    </Compile>
     <Compile Include="scanbox.xaml.cs">
       <DependentUpon>scanbox.xaml</DependentUpon>
     </Compile>
@@ -68,10 +65,6 @@
     <Compile Include="valetinfo.xaml.cs">
       <DependentUpon>valetinfo.xaml</DependentUpon>
     </Compile>
-    <Page Include="nav.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\buttonresc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

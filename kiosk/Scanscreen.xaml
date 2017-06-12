@@ -44,8 +44,39 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
           <!--Navbar-->
         <Border MinWidth="800" Grid.ColumnSpan="12" Grid.Row="1" Style="{StaticResource navbar}">
-                <UserControl Name="navigation" Loaded="loadnavbar"></UserControl>
-        </Border>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Name="time" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="2" Foreground="White">
+
+                    </TextBlock>
+
+                    <Border Grid.Column="9">
+                        <Button>
+                            Home
+                        </Button>
+                    </Border>
+
+                    <Border Grid.Column="10">
+                        <Button>
+                            Help?
+                        </Button>
+                    </Border>
+                </Grid>
+            </Border>
          <!--End of the navbar-->
 
 

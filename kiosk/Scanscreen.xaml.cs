@@ -32,19 +32,24 @@ namespace kiosk
             med.Play();
         }
 
-        
+        public void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+           
+            time.Text = DateTime.Now.ToString("h:mm:ss tt");
+            
+        }
         public void scanclick(object sender, EventArgs e)
         {
             this.Content = new valetinfo();
         }
-        public void loadnavbar(object sender, EventArgs e)
-        {
-            navigation.Content = new nav();
-        }
+        
 
         public void reinitialize()
         {
-            
+            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
             InitializeComponent();
 
 
