@@ -4,10 +4,9 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:kiosk"
-             mc:Ignorable="d"
-           
-             
-             >
+             mc:Ignorable="d">
+    
+    
     <UserControl.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="play" UriSource="/Images/playbtn.png"></BitmapImage>
@@ -135,7 +134,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     <!--Insert Media -->
 
                     <Border Name="img" Height="300" Width="400" BorderThickness="1" BorderBrush="DarkGray" Grid.Row="3" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="8">
-                        <MediaElement Source="C:\Users\VPA1737\Documents\Visual Studio 2017\Projects\kiosk\kiosk\Images\KioskScanTicket.wmv" Width="{Binding ActualWidth, ElementName=img}" Height="{Binding ActualHeight, ElementName=img}" />
+                        <MediaElement Source="../../Images/KioskScanTicket.wmv" Width="{Binding ActualWidth, ElementName=img}" Height="{Binding ActualHeight, ElementName=img}" />
                         </Border>
                     <!-- End of Media-->
 
