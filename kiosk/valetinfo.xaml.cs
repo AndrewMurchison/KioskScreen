@@ -16,43 +16,20 @@ using System.Windows.Shapes;
 namespace kiosk
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for valetinfo.xaml
     /// </summary>
-    public partial class Scanscreen : UserControl
+    public partial class valetinfo : UserControl
     {
-        public Scanscreen()
+        public valetinfo()
         {
-
-            reinitialize();
-        }
-        
-        public void replayvid(object sender, EventArgs e)
-        {
-            med.Position = TimeSpan.FromSeconds(0);
-            med.Play();
+            InitializeComponent();
         }
 
-        
-        public void scanclick(object sender, EventArgs e)
-        {
-            this.Content = new valetinfo();
-        }
         public void loadnavbar(object sender, EventArgs e)
         {
             navigation.Content = new nav();
         }
 
-        public void reinitialize()
-        {
-            
-            InitializeComponent();
-
-
-        }
         
-       
-
-       
-       
     }
 }

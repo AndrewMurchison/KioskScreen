@@ -24,6 +24,7 @@ namespace kiosk
         {
             InitializeComponent();
             this.Content = new Scanscreen();
+            
         }
     }
     
