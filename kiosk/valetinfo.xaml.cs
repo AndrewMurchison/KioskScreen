@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using kiosk.vInfoViewModel;
 namespace kiosk
 {
     /// <summary>
@@ -20,8 +20,10 @@ namespace kiosk
     /// </summary>
     public partial class valetinfo : UserControl
     {
-        public valetinfo()
+        vViewModel viewmod;
+        public valetinfo(vViewModel fish)
         {
+            viewmod = fish;
             reinitialize();
         }
 
@@ -31,10 +33,7 @@ namespace kiosk
             time.Text = DateTime.Now.ToString("h:mm:ss tt");
 
         }
-        public void scanclick(object sender, EventArgs e)
-        {
-            this.Content = new valetinfo();
-        }
+       
 
 
         public void reinitialize()
@@ -48,11 +47,18 @@ namespace kiosk
 
         }
 
+        private void valetviewctrl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+
+            valetviewctrl.DataContext = viewmod;
+        }
+
         public void gohome(object sender, EventArgs e)
         {
 
             this.Content = new Scanscreen();
-
+           
         }
     }
 }

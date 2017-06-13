@@ -65,6 +65,11 @@
     <Compile Include="valetinfo.xaml.cs">
       <DependentUpon>valetinfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="vInfoModel\vInfo.cs" />
+    <Compile Include="vInfoViewModel\vViewModel.cs" />
+    <Compile Include="vInfoView\vView.xaml.cs">
+      <DependentUpon>vView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\buttonresc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="valetinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vInfoView\vView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
