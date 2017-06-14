@@ -11,32 +11,55 @@
     <UserControl>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"></ColumnDefinition>
-                <ColumnDefinition Width="40*"></ColumnDefinition>
-                <ColumnDefinition Width="30*"></ColumnDefinition>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="15*"></RowDefinition>
-                <RowDefinition Height="85*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="90*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Border Opacity="0.8" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
-                <Border Margin="0,30,75,20" HorizontalAlignment="Right" >
-                    <Button Background="LightGray" Padding="10,0"  FontSize="16" Content="Help?&#x0a;Click for&#x0a;Assistance"></Button>
-                </Border>
+            <Border Opacity="0.7" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
+                
             </Border>
             
 
-            <StackPanel Margin="0,50" Grid.Column="1" Grid.Row="1" Orientation="Vertical">
-                <views:homescreen x:Name="HomeScreen"></views:homescreen>
-                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
+            <Grid Margin="0,50" Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"></RowDefinition>
+                    <RowDefinition Height="60*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <views:homescreen x:Name="HomeScreen" Grid.Row="0"></views:homescreen>
+
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
                 <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Line up the scanner light"></TextBlock>
                 <TextBlock HorizontalAlignment="Center" FontSize="20" Text="with the barcode please"></TextBlock>
                 <Border>
                     <MediaElement Name="med" Source="../../Images/KioskScanTicket.wmv" Height="250" UnloadedBehavior="Manual" MediaEnded="replayvid" />
                 </Border>
-                
+                </StackPanel>
+            </Grid>
 
-            </StackPanel>
+            <Grid Margin="0,50,75,50" Grid.Row="1" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"></RowDefinition>
+                    <RowDefinition Height="60*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*"></ColumnDefinition>
+                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                        <Border>
+                            <Button Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16">Help? Need Assistance</Button>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                
+            </Grid>
+            
         </Grid>
     </UserControl>
 </Window>
