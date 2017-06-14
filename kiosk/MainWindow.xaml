@@ -9,6 +9,7 @@
         xmlns:views="clr-namespace:kiosk.vInfoView" Background="LightGray"
         >
     <UserControl>
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"></ColumnDefinition>
@@ -23,22 +24,25 @@
                 
             </Border>
             
-
+            
             <Grid Margin="0,50" Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*"></RowDefinition>
                     <RowDefinition Height="60*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <views:homescreen x:Name="HomeScreen" Grid.Row="0"></views:homescreen>
-
-                <StackPanel Orientation="Vertical" Grid.Row="1">
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
-                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Line up the scanner light"></TextBlock>
-                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="with the barcode please"></TextBlock>
+                <Viewbox MaxHeight="200">
+                    <views:homescreen x:Name="HomeScreen" Grid.Row="0"></views:homescreen>
+                </Viewbox>
+                <Viewbox Grid.Row="1">
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontSize="20" Text="Line up the scanner light"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontSize="20" Text="with the barcode please"></TextBlock>
                 <Border>
-                    <MediaElement Name="med" Source="../../Images/KioskScanTicket.wmv" Height="250" UnloadedBehavior="Manual" MediaEnded="replayvid" />
+                    <MediaElement Name="med" Source="../../Images/KioskScanTicket.wmv" MaxHeight="250" UnloadedBehavior="Manual" MediaEnded="replayvid" />
                 </Border>
                 </StackPanel>
+                </Viewbox>
             </Grid>
 
             <Grid Margin="0,50,75,50" Grid.Row="1" Grid.Column="2">
@@ -48,14 +52,18 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40*"></ColumnDefinition>
-                        <ColumnDefinition Width="60*"></ColumnDefinition>
+                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                    
+                        <StackPanel Orientation="Vertical" Grid.Column="1">
                         <Border>
-                            <Button Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16">Help? Need Assistance</Button>
+                            <Viewbox MaxHeight="50">
+                                <Button Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16">Help? Need Assistance</Button>
+                            </Viewbox>
                         </Border>
                     </StackPanel>
+                    
                 </Grid>
                 
             </Grid>
