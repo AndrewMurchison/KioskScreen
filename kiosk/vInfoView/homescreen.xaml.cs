@@ -13,27 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace kiosk
+namespace kiosk.vInfoView
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for homescreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class homescreen : UserControl
     {
-        public MainWindow()
+        public homescreen()
         {
             InitializeComponent();
-            //this.Content = new Scanscreen();
-           
-        }
-
-        public void replayvid(object sender, EventArgs e)
-        {
-            med.Position = TimeSpan.FromSeconds(0);
-            med.Play();
         }
     }
-    
 }
-
-

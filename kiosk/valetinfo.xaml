@@ -61,7 +61,7 @@
 
                     <TextBlock Name="time" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.ColumnSpan="2" Foreground="White">
 
-                    </TextBlock>
+                    </TextBlock>              
 
                     <Border Grid.Column="9">
                         <Button Click="gohome">
@@ -81,7 +81,7 @@
 
             <!--Start of scan screen middle-->
             <Border Grid.Column="4" Grid.ColumnSpan="4" Grid.Row="3" Grid.RowSpan="6" Style="{StaticResource cornerround}">
-                <Grid Name="scan" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Grid.Background>
                         <SolidColorBrush Color="LightGray" Opacity="0.5"/>
                     </Grid.Background>

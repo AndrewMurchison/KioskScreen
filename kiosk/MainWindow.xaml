@@ -5,7 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kiosk"
         mc:Ignorable="d"
-        Title="MainWindow">
-    
-    
+        Title="MainWindow"
+        xmlns:views="clr-namespace:kiosk.vInfoView" Background="LightGray"
+        >
+    <UserControl>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"></ColumnDefinition>
+                <ColumnDefinition Width="40*"></ColumnDefinition>
+                <ColumnDefinition Width="30*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="85*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Opacity="0.8" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
+                <Border Margin="0,30,75,20" HorizontalAlignment="Right" >
+                    <Button Background="LightGray" Padding="10,0"  FontSize="16" Content="Help?&#x0a;Click for&#x0a;Assistance"></Button>
+                </Border>
+            </Border>
+            
+
+            <StackPanel Margin="0,50" Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+                <views:homescreen x:Name="HomeScreen"></views:homescreen>
+                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Line up the scanner light"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="20" Text="with the barcode please"></TextBlock>
+                <Border>
+                    <MediaElement Name="med" Source="../../Images/KioskScanTicket.wmv" Height="250" UnloadedBehavior="Manual" MediaEnded="replayvid" />
+                </Border>
+                
+
+            </StackPanel>
+        </Grid>
+    </UserControl>
 </Window>

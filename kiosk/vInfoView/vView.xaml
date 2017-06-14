@@ -8,18 +8,18 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         
-        <StackPanel HorizontalAlignment = "Left">
+        <StackPanel HorizontalAlignment = "Center">
 
             <ItemsControl ItemsSource = "{Binding Path = Tik}">
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation = "Horizontal">
-                           
+                        <StackPanel Height="Auto" Orientation = "Vertical">
 
-                            <TextBlock Text = "{Binding Path = TicketNum, Mode = OneWay}" 
+                            <Border>
+                                <TextBlock FontSize="16" Text = "{Binding Path = TicketNum, Mode = OneWay}" 
                         Margin = "0 5 3 5"/>
-
+                            </Border>
                             <TextBlock Text = "{Binding Path = Validations, Mode = OneWay}" 
                         Margin = "0 5 3 5"/>
 
@@ -30,6 +30,8 @@
                         Margin = "0 5 3 5"/>
 
                         </StackPanel>
+                        
+                        
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
 
