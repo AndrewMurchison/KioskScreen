@@ -43,6 +43,24 @@ namespace kiosk
             med.Position = TimeSpan.FromSeconds(0);
             med.Play();
         }
+
+        private void homescreenctrl(object sender, RoutedEventArgs e)
+        {
+            kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
+            homedata.LoadScreen1();
+            homeinfo.DataContext = homedata;
+        }
+        public void renderpg(object sender, RoutedEventArgs e)
+        {
+            kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
+            homedata.LoadScreen2();
+            homeinfo.DataContext = homedata;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
     
 }

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:kiosk"
         mc:Ignorable="d"
         Title="MainWindow"
-        xmlns:views="clr-namespace:kiosk.vInfoView" Background="LightGray"
+        Background="LightGray"
         >
     <UserControl>
-        
-        <Grid>
+
+        <Grid Name="homeinfo" Loaded="homescreenctrl">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"></ColumnDefinition>
                 <ColumnDefinition Width="50*"></ColumnDefinition>
@@ -20,6 +20,8 @@
                 <RowDefinition Height="10*"></RowDefinition>
                 <RowDefinition Height="90*"></RowDefinition>
             </Grid.RowDefinitions>
+            
+             <!--NavBar-->
                 <Grid Opacity="0.7" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -30,23 +32,55 @@
                     </TextBlock>
                 </Viewbox>
             </Grid>
-
+            <!--End of NavBar-->
+            
+            <!--Left Sidebar -->
             <Grid Margin="75,50,0,50" Grid.Column="0" Grid.Row="1">
                 
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"></ColumnDefinition>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                    
+                        <Border>
+                        
+                            <Button Click="renderpg" Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16">Scan</Button>
+                       
+                    </Border>
+                    
+                    <Image Source="scanValidation.png" />
+                </StackPanel>
+                
             </Grid>
+            <!--End of Left Sidebar-->
             
+            <!--Middle-->
             
             <Grid Margin="0,50" Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*"></RowDefinition>
                     <RowDefinition Height="60*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Viewbox MaxHeight="200">
-                    <views:homescreen x:Name="HomeScreen" Grid.Row="0"></views:homescreen>
-                </Viewbox>
+                <ItemsControl ItemsSource = "{Binding Path = Home}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Viewbox MaxHeight="200">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock TextAlignment="Center" Text="{Binding Path=Greeting, Mode=OneWay}">
+                                    </TextBlock>
+                                    
+                                </StackPanel>
+
+                            </Viewbox>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
                 <Viewbox Grid.Row="1">
                     <StackPanel Orientation="Vertical" >
-                        <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontWeight="Bold" FontSize="20" Text="Bar Code Faces Up"></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontWeight="Bold" FontSize="20" Text="Bar Code  Faces Up"></TextBlock>
                         <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontSize="20" Text="Line up the scanner light"></TextBlock>
                         <TextBlock HorizontalAlignment="Center" MaxHeight="100" FontSize="20" Text="with the barcode please"></TextBlock>
                 <Border>
@@ -55,7 +89,9 @@
                 </StackPanel>
                 </Viewbox>
             </Grid>
-
+            <!--End of Middle-->
+            
+            <!--Right Sidebar-->
             <Grid Margin="0,50,75,50" Grid.Row="1" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40*"></RowDefinition>
@@ -70,7 +106,7 @@
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                         <Border>
                             <Viewbox MaxHeight="50">
-                                <Button Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16">Help? Need Assistance</Button>
+                                <Button Padding="0,10" Background="#FF010172" Opacity="0.7" Foreground="White" FontSize="16" Click="Button_Click">Help? Need Assistance</Button>
                             </Viewbox>
                         </Border>
                     </StackPanel>
@@ -78,6 +114,7 @@
                 </Grid>
                 
             </Grid>
+            <!--End of RightSidebar-->
             
         </Grid>
     </UserControl>
