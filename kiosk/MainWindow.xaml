@@ -20,9 +20,20 @@
                 <RowDefinition Height="10*"></RowDefinition>
                 <RowDefinition Height="90*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Border Opacity="0.7" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
+                <Grid Opacity="0.7" Background="#FF010172" Grid.Row="0" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1" MaxHeight="50"><TextBlock Name="time" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+
+            <Grid Margin="75,50,0,50" Grid.Column="0" Grid.Row="1">
                 
-            </Border>
+            </Grid>
             
             
             <Grid Margin="0,50" Grid.Column="1" Grid.Row="1">

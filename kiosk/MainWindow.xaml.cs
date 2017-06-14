@@ -22,9 +22,20 @@ namespace kiosk
     {
         public MainWindow()
         {
+            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
             InitializeComponent();
-            //this.Content = new Scanscreen();
+            
            
+        }
+
+        public void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+
+            time.Text = DateTime.Now.ToString("h:mm:ss tt");
+
         }
 
         public void replayvid(object sender, EventArgs e)
