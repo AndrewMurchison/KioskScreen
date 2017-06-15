@@ -38,11 +38,11 @@ namespace kiosk
 
         }
 
-       // public void replayvid(object sender, EventArgs e)
-       // {
-        //    med.Position = TimeSpan.FromSeconds(0);
-       //     med.Play();
-       // }
+       public void replayvid(object sender, EventArgs e)
+       {
+            med.Position = TimeSpan.FromSeconds(0);
+           med.Play();
+        }
 
         private void homescreenctrl(object sender, RoutedEventArgs e)
         {

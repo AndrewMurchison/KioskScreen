@@ -14,8 +14,9 @@ namespace kiosk.vInfoModel
     {
         private String greeting;
         private String scanimg;
+        private String scanningmsg;
         // This might be linked to other model private String infofield;
-        
+
 
         public string Greeting
         {
@@ -30,6 +31,24 @@ namespace kiosk.vInfoModel
                     greeting = value;
                     RaisePropertyChanged("Greeting");
                    
+
+                }
+            }
+        }
+
+        public string ScanningMsg
+        {
+            get
+            {
+                return scanningmsg;
+            }
+            set
+            {
+                if (scanningmsg != value)
+                {
+                    scanningmsg = value;
+                    RaisePropertyChanged("ScanningMsg");
+
 
                 }
             }

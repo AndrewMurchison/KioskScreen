@@ -21,7 +21,7 @@ namespace kiosk.vInfoViewModel
         {
             ObservableCollection<homescreen> home = new ObservableCollection<homescreen>();
 
-            home.Add(new homescreen { Greeting = "Welcome\nPlease Scan your Valet Ticket", Scanimg = "ticketimg"});
+            home.Add(new homescreen { Greeting = "Welcome\nPlease Scan your Valet Ticket", Scanimg = "ticketimg", ScanningMsg="Bar Code Faces Up"});
 
 
             Home = home;
@@ -31,7 +31,7 @@ namespace kiosk.vInfoViewModel
         {
             ObservableCollection<homescreen> home = new ObservableCollection<homescreen>();
 
-            home.Add(new homescreen { Greeting = "Scan Validations or\nPick a Payment Option", Scanimg = "validationimg"});
+            home.Add(new homescreen { Greeting = "Scan Validations or\nPick a Payment Option", Scanimg = "validationimg", ScanningMsg="Validation Bar Code Faces Up"});
 
 
             Home = home;
