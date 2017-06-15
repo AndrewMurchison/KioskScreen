@@ -22,7 +22,7 @@ namespace kiosk
     {
         public MainWindow()
         {
-            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+           var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
@@ -31,30 +31,30 @@ namespace kiosk
            
         }
 
-        public void dispatcherTimer_Tick(object sender, EventArgs e)
+       public void dispatcherTimer_Tick(object sender, EventArgs e)
         {
 
-            time.Text = DateTime.Now.ToString("h:mm:ss tt");
+           time.Text = DateTime.Now.ToString("h:mm:ss tt");
 
         }
 
-        public void replayvid(object sender, EventArgs e)
-        {
-            med.Position = TimeSpan.FromSeconds(0);
-            med.Play();
-        }
+       // public void replayvid(object sender, EventArgs e)
+       // {
+        //    med.Position = TimeSpan.FromSeconds(0);
+       //     med.Play();
+       // }
 
         private void homescreenctrl(object sender, RoutedEventArgs e)
         {
             kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
             homedata.LoadScreen1();
-            homeinfo.DataContext = homedata;
+            MainGrid.DataContext = homedata;
         }
         public void renderpg(object sender, RoutedEventArgs e)
         {
             kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
             homedata.LoadScreen2();
-            homeinfo.DataContext = homedata;
+            MainGrid.DataContext = homedata;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
