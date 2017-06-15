@@ -20,7 +20,7 @@ namespace kiosk.vInfoViewModel
         {
             ObservableCollection<ticketinfo> ticket = new ObservableCollection<ticketinfo>();
 
-            ticket.Add(new ticketinfo { TicketNum = "", Validations = "HP", Amt = "$7.00", Payopt = "Credit/Debit"});
+            ticket.Add(new ticketinfo { TicketNum = "5663", Validations = "HP", Amt = "$7.00", Payopt = "Credit/Debit"});
            
 
             Tik = ticket;

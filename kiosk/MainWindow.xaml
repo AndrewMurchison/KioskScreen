@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Background="#FF010172"
-        
+        xmlns:views = "clr-namespace:kiosk.vInfoView"
         >
     <UserControl>
         <UserControl.Resources>
@@ -18,27 +18,7 @@
                 <Setter Property="Margin" Value="5"></Setter>
                 <Setter Property="Background" Value="LightGray"></Setter>
             </Style>
-            <Style x:Key="AlignRight" TargetType="StackPanel">
-                <Style.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
-                        <Setter Property="Margin" Value="5"></Setter>
-                    </Style>
-                    
-                </Style.Resources>
-            </Style>
-            <Style x:Key="AlignCenter" TargetType="StackPanel">
-                <Style.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="TextAlignment" Value="Center"></Setter>
-                        <Setter Property="Foreground" Value="White"></Setter>
-                    </Style>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="Margin" Value="5"></Setter>
-                        <Setter Property="CornerRadius" Value="5"></Setter>
-                    </Style>
-                </Style.Resources>
-            </Style>
+            
 
         </UserControl.Resources>
         <Grid Name="MainGrid" Margin="10" Loaded="homescreenctrl">
@@ -55,7 +35,27 @@
                     <RowDefinition Height="50*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Style="{StaticResource borders}">
-                    <StackPanel Orientation=" Vertical"></StackPanel>
+                    
+                        <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80*"></RowDefinition>
+                            <RowDefinition Height="20*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Viewbox VerticalAlignment="Top" Margin="0,0,100,0">
+                            <Border Grid.Row="0">
+                                <Image Source="paycelogo.png" />
+                            </Border>
+                        </Viewbox>
+                        
+                        <Border Grid.Row="1" Margin="60,0,60,5" >
+                            <Viewbox Stretch="Fill">
+                                <TextBox KeyDown="renderpg" Text="{}"></TextBox>
+                            </Viewbox>
+                        </Border>
+                    </Grid>
+                    
+
+
                 </Border>
                 <Border Grid.Row="1" Style="{StaticResource borders}">
                     <StackPanel Orientation=" Vertical"></StackPanel>
@@ -89,39 +89,16 @@
                         </StackPanel>
                         </Viewbox>
                         </Border>
-                    <!--Greeting/Time-->
+                    <!--End of Greeting/Time-->
 
                     <Border  Margin="30,0,30,30"  Grid.Row="1" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
                         
                         <Viewbox HorizontalAlignment="Center">
-                            
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                
-                                <StackPanel Grid.Column="0" Orientation="Vertical" Style="{StaticResource AlignRight}">
-                                    <TextBlock Text="Ticket#: "></TextBlock>
-                                    <TextBlock Text="Validations: "></TextBlock>
-                                    <TextBlock Text="Amount Due: "></TextBlock>
-                                </StackPanel>
-                                <StackPanel Grid.Column="1" Orientation="Vertical" Style="{StaticResource AlignCenter}">
 
-                                    <Border Background="#FF22A6F1">
-                                        <TextBlock Text="1234-3"></TextBlock>
-                                    </Border>
-                                    <Border Background="#FF51B87B">
-                                        <TextBlock Text="HP"></TextBlock>
-                                    </Border>
-                                    <Border Background="#FFFF9A09">
-                                        <TextBlock Text="$453.99"></TextBlock>
-                                    </Border>
-                                </StackPanel>
-                            </Grid>
+                            <views:vView x:Name = "valetviewctrl"/>
                         </Viewbox> 
                     </Border>
-
+                <!--Video Section-->
                     <Border Margin="30,5,30,30"  Grid.Row="2" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -131,7 +108,14 @@
                             <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="0,0,0,1">
                                 <Viewbox>
                                     <StackPanel Orientation="Vertical">
-                                    <TextBlock TextAlignment="Center" Text="Bar Code Faces Up" FontWeight="Bold"></TextBlock>
+                                        <ItemsControl ItemsSource = "{Binding Path = Home}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                    <TextBlock TextAlignment="Center" Text="{Binding Path=ScanningMsg}" FontWeight="Bold"></TextBlock>
+                                                </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        
                                     <TextBlock TextAlignment="Center" Text="Move the ticket so the scanner&#x0a;light can read the barcode"></TextBlock>
                                 </StackPanel>
                                 </Viewbox>
@@ -144,6 +128,7 @@
                            </Viewbox>
                         </Grid>
                     </Border>
+                    <!--End of Video Section-->
                     
                 </Grid>
             </Border>

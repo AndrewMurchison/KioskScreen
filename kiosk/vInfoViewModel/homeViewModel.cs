@@ -21,7 +21,7 @@ namespace kiosk.vInfoViewModel
         {
             ObservableCollection<homescreen> home = new ObservableCollection<homescreen>();
 
-            home.Add(new homescreen { Greeting = "Welcome\nPlease Scan your Valet Ticket", Scanimg = "ticketimg", ScanningMsg="Bar Code Faces Up"});
+            home.Add(new homescreen { Greeting = "Welcome\nPlease Scan your Valet Ticket", Scanimg = "ticketimg", ScanningMsg="Bar Code Faces Up" });
 
 
             Home = home;

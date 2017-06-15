@@ -69,6 +69,9 @@
     <Compile Include="vInfoModel\vInfo.cs" />
     <Compile Include="vInfoViewModel\homeViewModel.cs" />
     <Compile Include="vInfoViewModel\vViewModel.cs" />
+    <Compile Include="vInfoView\scanbutton.xaml.cs">
+      <DependentUpon>scanbutton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="vInfoView\vView.xaml.cs">
       <DependentUpon>vView.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="valetinfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vInfoView\scanbutton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="KioskScanTicket.wmv" />
+    <Resource Include="paycelogo.png" />
     <Resource Include="scanValidation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
