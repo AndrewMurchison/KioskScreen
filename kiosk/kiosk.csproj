@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="modal.xaml.cs">
+      <DependentUpon>modal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="scanbox.xaml.cs">
       <DependentUpon>scanbox.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
     <Compile Include="vInfoView\vView.xaml.cs">
       <DependentUpon>vView.xaml</DependentUpon>
     </Compile>
+    <Page Include="modal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\buttonresc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +182,7 @@
     <Resource Include="glyphicons-21-home.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common_Payment By Cash.avi" />
     <Content Include="KioskScanTicket.wmv" />
     <Resource Include="Images\scanTicket.png" />
     <Resource Include="paycelogo.png" />

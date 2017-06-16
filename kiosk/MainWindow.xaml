@@ -18,10 +18,20 @@
                 <Setter Property="Margin" Value="5"></Setter>
                 <Setter Property="Background" Value="LightGray"></Setter>
             </Style>
+            <Style x:Key="Fonts" TargetType="Grid">
+                <Style.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="FontFamily" Value="Segoe UI Light"></Setter>
+                    </Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="FontFamily" Value="Segoe UI Light"></Setter>
+                    </Style>
+                </Style.Resources>
+            </Style>
             
 
         </UserControl.Resources>
-        <Grid Name="MainGrid" Margin="10" Loaded="homescreenctrl">
+        <Grid Name="MainGrid" Margin="10" Style="{StaticResource Fonts}" Loaded="homescreenctrl">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"></ColumnDefinition>
                 <ColumnDefinition Width="50*"></ColumnDefinition>
@@ -118,7 +128,9 @@
                                         <ItemsControl ItemsSource = "{Binding Path = Home}">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
-                                                    <TextBlock TextAlignment="Center" Text="{Binding Path=ScanningMsg}" FontWeight="Bold"></TextBlock>
+                                                    <Border Margin="0,0,0,5" BorderBrush="DarkGray" BorderThickness="0,0,0,1">
+                                                        <TextBlock Margin="15,0" TextAlignment="Center" Text="{Binding Path=ScanningMsg}"></TextBlock>
+                                                    </Border>
                                                 </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                         </ItemsControl>
@@ -155,26 +167,29 @@
                 </Border>
                 
                 <Border Grid.Row="1" Style="{StaticResource borders}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20*"></RowDefinition>
-                            <RowDefinition Height="80*"></RowDefinition>
-                        </Grid.RowDefinitions>
+                    <Border Margin="30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20*"></RowDefinition>
+                                <RowDefinition Height="80*"></RowDefinition>
+                            </Grid.RowDefinitions>
 
 
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50*"></ColumnDefinition>
-                                <ColumnDefinition Width="50*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
-                            <Button Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="0">
-                                Cash Payments
-                            </Button>
+                                <Button Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
+                                <Button Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="0">
+                                    Cash Payments
+                                </Button>
 
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
+                    
                 </Border>
 
 

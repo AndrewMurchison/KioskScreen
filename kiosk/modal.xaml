@@ -1,0 +1,57 @@
+﻿<Window x:Class="kiosk.modal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kiosk"
+        mc:Ignorable="d"
+        Background="#FFDEDEDE"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        
+        
+        Title="modal" Height="400" Width="800"
+        >
+    <Border CornerRadius="5" BorderBrush="#FFA09F9F"
+        BorderThickness="2">
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="80*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1" Margin="30,0">
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" FontSize="20">Payment Screen</TextBlock>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+                <ColumnDefinition Width="50*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Margin="20" Grid.Column="0">
+                <MediaElement Source="../../Img/cash.avi"></MediaElement>
+            </Border>
+            <Border Grid.Column="1" Margin="20">
+
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" Margin="0,10">Amount Due: $7.00</TextBlock>
+                        <Border Margin="30,0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1">
+                        </Border>
+                        <TextBlock Margin="30,0" FontFamily="Segoe UI Light" TextWrapping="Wrap">Please insert money as shown in the video to complete the transaction.</TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="30,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Border Margin="0,0,5,0">
+                            <Button Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Cancel</Button>
+                        </Border>
+                        <Border >
+                            <Button Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Finish</Button>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+    </Border>
+</Window>

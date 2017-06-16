@@ -65,7 +65,18 @@ namespace kiosk
             }
         }
 
-       
+        public void CashClick(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        public void CardClick(object sender, RoutedEventArgs e)
+        {
+            Window newin = new modal();
+            newin.ShowDialog();
+        }
+
+
     }
     
 }
