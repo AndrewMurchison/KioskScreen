@@ -71,3 +71,5 @@ namespace kiosk
 }
 
 
+//[DllImport("testreader.dll")] testing calls to dll have to build dll then move it to bin directory of working project
+//public static extern int add();

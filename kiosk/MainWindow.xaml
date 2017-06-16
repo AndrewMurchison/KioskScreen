@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:kiosk"
         mc:Ignorable="d"
         Title="MainWindow"
-        Background="#FF010172"
+        Background="#FF00005D"
         xmlns:views = "clr-namespace:kiosk.vInfoView"
         >
     <UserControl>
@@ -38,27 +38,34 @@
                     
                         <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="80*"></RowDefinition>
-                            <RowDefinition Height="20*"></RowDefinition>
+                            <RowDefinition Height="70*"></RowDefinition>
+                            <RowDefinition Height="30*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Viewbox VerticalAlignment="Top" Margin="0,0,100,0">
-                            <Border Grid.Row="0">
+                        <Viewbox VerticalAlignment="Top">
+                            <Border Margin="0,0,100,0" Grid.Row="0">
                                 <Image Source="paycelogo.png" />
                             </Border>
                         </Viewbox>
-                        
-                        <Border Grid.Row="1" Margin="60,0,60,5" >
-                            <Viewbox Stretch="Fill">
-                                <TextBox KeyDown="renderpg" Text="{}"></TextBox>
-                            </Viewbox>
+                        <Viewbox Grid.Row="1" >
+                            <Border Margin="80,30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1" >
+                            
+                            <TextBox KeyDown="renderpg" TextAlignment="Center" Text="Scan Ticket"></TextBox>
                         </Border>
+                        </Viewbox>
                     </Grid>
                     
 
 
                 </Border>
+                
+                
                 <Border Grid.Row="1" Style="{StaticResource borders}">
-                    <StackPanel Orientation=" Vertical"></StackPanel>
+                    <Viewbox>
+                        <Border Margin="80,30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
+                        <Image Source="/Images/scanTicket.png" Stretch="Fill" />
+                    </Border>
+                    </Viewbox>
+
                 </Border>
             </Grid>
             <!--LeftSideBarEnd-->
@@ -141,10 +148,36 @@
                     <RowDefinition Height="50*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" Style="{StaticResource borders}">
+                    
+                    <Border Margin="30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
+                        <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"></RowDefinition>
+                            <RowDefinition Height="80*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                            
+                                <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="0,0,0,1">
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
+                                    <Viewbox Stretch="Fill">
+                                        <Button Grid.Column="0" Background="LightGray"  TextBlock.TextAlignment="Center" Content="Help?&#x0a;Click for&#x0a;Assistance"></Button>
+                                    </Viewbox>
+                                </Grid>
+                            </Border>
+                           
+
+
+                        </Grid>
                 </Border>
+                </Border>
+                
                 <Border Grid.Row="1" Style="{StaticResource borders}">
-
+                        
                 </Border>
 
 

@@ -146,9 +146,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Home_5699_32.bmp" />
   </ItemGroup>
@@ -178,8 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="KioskScanTicket.wmv" />
+    <Resource Include="Images\scanTicket.png" />
     <Resource Include="paycelogo.png" />
-    <Resource Include="scanValidation.png" />
+    <Content Include="Images\scanValidation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
