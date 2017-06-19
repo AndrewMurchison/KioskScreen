@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Background="#FF00005D"
+        WindowState="Maximized"
         xmlns:views = "clr-namespace:kiosk.vInfoView"
         >
     <UserControl>
