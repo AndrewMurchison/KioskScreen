@@ -15,8 +15,8 @@
         BorderThickness="2">
         <Border Margin="80">
             <Viewbox>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
-            Ticket Scanning
+            <TextBlock FontSize="16" Name="message" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
             </TextBlock>
         </Viewbox>
         </Border>

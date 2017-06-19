@@ -64,9 +64,17 @@ namespace kiosk
                 kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
                 vdata.LoadTicket();
                 valetviewctrl.DataContext = vdata;
-                Window noti = new notifications(System.Windows.SystemParameters.PrimaryScreenWidth, System.Windows.SystemParameters.PrimaryScreenHeight);
-                noti.ShowDialog();
+                
+                
+                popup(sender, e);
             }
+        }
+
+        public void popup(object sender, RoutedEventArgs e)
+        {
+            var name = (Control)sender;
+            Window noti = new notifications(name.Name,System.Windows.SystemParameters.PrimaryScreenWidth, System.Windows.SystemParameters.PrimaryScreenHeight);
+            noti.ShowDialog();
         }
 
         public void CashClick(object sender, RoutedEventArgs e)

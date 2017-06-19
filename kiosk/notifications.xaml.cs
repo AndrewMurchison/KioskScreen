@@ -22,9 +22,11 @@ namespace kiosk
         System.Windows.Threading.DispatcherTimer dispatcherTimer;
         double height;
         double width;
+        int time;
+
         
-        public notifications(double wt, double ht)
-        //public notifications(String title, String msg, int time)
+        //public notifications(double wt, double ht)
+        public notifications(String name, double wt, double ht)
         {
             
             width = wt;
@@ -32,6 +34,17 @@ namespace kiosk
             this.Top = 0;
             this.Left = (width/2)-300;
             this.Opacity = 0;
+            InitializeComponent();
+            if (name.Equals("help"))
+            {
+                message.Text = "A valet worker has been alerted and will assist you shortly";
+                time = 3;
+            }
+            else
+            {
+                message.Text = "Ticket Scanning";
+                time = 1;
+            }
             fadeIn();
             
 
@@ -52,7 +65,7 @@ namespace kiosk
         }
         public async void fadeIn()
         {
-            InitializeComponent();
+            
             while (this.Top<(height/2)-150)
             {
                 await Task.Delay(1);
@@ -63,7 +76,7 @@ namespace kiosk
             
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(fadeOut);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, time);
             dispatcherTimer.Start();
 
 

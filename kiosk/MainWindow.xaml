@@ -60,7 +60,7 @@
                         <Viewbox Grid.Row="1" >
                             <Border Margin="80,30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1" >
                             
-                            <TextBox KeyDown="renderpg" TextAlignment="Center" Text="Scan Ticket"></TextBox>
+                            <TextBox Name="entr" KeyDown="renderpg" TextAlignment="Center" Text="Scan Ticket"></TextBox>
                         </Border>
                         </Viewbox>
                     </Grid>
@@ -163,7 +163,9 @@
                 <Border Grid.Row="0" Style="{StaticResource borders}">
                     
                     <Border Margin="30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
-                        
+                        <StackPanel Orientation="Vertical">
+                            <Button Click="popup" Name="help">Help</Button>
+                        </StackPanel>
                 </Border>
                 </Border>
                 
