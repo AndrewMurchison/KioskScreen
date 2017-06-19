@@ -79,6 +79,7 @@ namespace kiosk
             var button = (Button)sender;
             Window newin = new modal(this, button.Name);
             this.Opacity = 0.1;
+            
             newin.ShowDialog();
         }
 

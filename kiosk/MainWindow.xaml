@@ -170,21 +170,31 @@
                     <Border Margin="30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
                         <Grid>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"></RowDefinition>
                                 <RowDefinition Height="20*"></RowDefinition>
-                                <RowDefinition Height="80*"></RowDefinition>
+                                <RowDefinition Height="70*"></RowDefinition>
+                                
                             </Grid.RowDefinitions>
-
-
-                            <Grid Grid.Row="0">
+                            <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="0,0,0,1">
+                                <Viewbox>
+                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center">Payment Options</TextBlock>
+                                </Viewbox>
+                            </Border>
+                            <Grid Grid.Row="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50*"></ColumnDefinition>
                                     <ColumnDefinition Width="50*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Button Name="card" Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
-                                <Button Name="cash" Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="0">
-                                    Cash Payments
-                                </Button>
+                                <Viewbox Margin="0,10,0,0" MaxHeight="70" Grid.Column="0" Stretch="Fill">
+                                    <Button Name="card" Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
+
+                                </Viewbox>
+                                <Viewbox Margin="0,10,0,0" MaxHeight="70" Grid.Column="1" Stretch="Fill">
+                                    <Button Name="cash" Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="1">
+                                        Cash Payments
+                                    </Button>
+                                </Viewbox>
 
                             </Grid>
                         </Grid>
