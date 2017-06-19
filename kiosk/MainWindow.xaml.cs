@@ -41,7 +41,7 @@ namespace kiosk
        public void replayvid(object sender, EventArgs e)
        {
             med.Position = TimeSpan.FromSeconds(0);
-           med.Play();
+            med.Play();
         }
 
         private void homescreenctrl(object sender, RoutedEventArgs e)
@@ -50,9 +50,7 @@ namespace kiosk
             homedata.LoadScreen1();
             MainGrid.DataContext = homedata;
 
-            kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
-            vdata.LoadTicket();
-            valetviewctrl.DataContext = vdata;
+            
 
         }
         public void renderpg(object sender, KeyEventArgs e)
@@ -62,6 +60,12 @@ namespace kiosk
                 kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
                 homedata.LoadScreen2();
                 MainGrid.DataContext = homedata;
+
+                kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
+                vdata.LoadTicket();
+                valetviewctrl.DataContext = vdata;
+                Window noti = new notifications(System.Windows.SystemParameters.PrimaryScreenWidth, System.Windows.SystemParameters.PrimaryScreenHeight);
+                noti.ShowDialog();
             }
         }
 

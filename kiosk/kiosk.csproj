@@ -59,6 +59,9 @@
     <Compile Include="modal.xaml.cs">
       <DependentUpon>modal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="notifications.xaml.cs">
+      <DependentUpon>notifications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="scanbox.xaml.cs">
       <DependentUpon>scanbox.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <DependentUpon>vView.xaml</DependentUpon>
     </Compile>
     <Page Include="modal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="notifications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
