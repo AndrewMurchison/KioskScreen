@@ -20,17 +20,52 @@ namespace kiosk
     public partial class modal : Window
     {
         Window win;
-        public modal(Window window)
+        String name;
+        
+        public modal(Window window, String nm)
         {
-            win = window;
             InitializeComponent();
             
+
+
+            name = nm;
+            win = window;
+
+           
+
+
+        }
+
+        public void replayvid(object sender, EventArgs e)
+        {
+           
+            video.Position = TimeSpan.FromSeconds(0);
+            video.Play();
             
         }
+
         public void close(object sender, RoutedEventArgs e)
         {
             this.Close();
             win.Opacity = 1.0;
+        }
+
+        public void loadmodal(object sender, RoutedEventArgs e)
+        {
+            if (name.Equals("cash"))
+            {
+                kiosk.vInfoViewModel.ModalViewModel mod = new kiosk.vInfoViewModel.ModalViewModel();
+                mod.LoadCashModal();
+                ldmodal.DataContext = mod;
+                video.Source = new Uri(@"../../Img/cash.avi", UriKind.RelativeOrAbsolute);
+            }
+            else
+            {
+                kiosk.vInfoViewModel.ModalViewModel mod = new kiosk.vInfoViewModel.ModalViewModel();
+                mod.LoadCreditModal();
+                ldmodal.DataContext = mod;
+                video.Source = new Uri(@"../../Img/credit.avi", UriKind.RelativeOrAbsolute);
+            }
         }
     }
 }

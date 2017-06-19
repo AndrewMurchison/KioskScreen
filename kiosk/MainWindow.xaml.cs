@@ -66,13 +66,18 @@ namespace kiosk
         }
 
         public void CashClick(object sender, RoutedEventArgs e)
+
         {
-          
+            var button = (Button)sender;
+            Window newin = new modal(this, button.Name);
+            this.Opacity = 0.1;
+            newin.ShowDialog();
         }
 
         public void CardClick(object sender, RoutedEventArgs e)
         {
-            Window newin = new modal(this);
+            var button = (Button)sender;
+            Window newin = new modal(this, button.Name);
             this.Opacity = 0.1;
             newin.ShowDialog();
         }

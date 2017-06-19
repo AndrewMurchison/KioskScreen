@@ -8,6 +8,9 @@
         Background="#FFDEDEDE"
         ResizeMode="NoResize"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Name="ldmodal"
+        Loaded="loadmodal"
         
         
         Title="modal" Height="400" Width="800"
@@ -19,7 +22,7 @@
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="80*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1" Margin="30,0">
+        <Border Grid.Row="0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1" Margin="20,0">
 
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" FontSize="20">Payment Screen</TextBlock>
         </Border>
@@ -29,8 +32,12 @@
                 <ColumnDefinition Width="50*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Margin="20" Grid.Column="0">
-                <MediaElement Source="../../Img/cash.avi"></MediaElement>
-            </Border>
+                   
+            <MediaElement Name="video" UnloadedBehavior="Manual" MediaEnded="replayvid"></MediaElement>
+                                <!--<MediaElement Source="../../Img/cash.avi"></MediaElement>-->
+                            
+                
+                </Border>
             <Border Grid.Column="1" Margin="20">
 
                 <Grid>
@@ -39,8 +46,14 @@
                         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" Margin="0,10">Amount Due: $7.00</TextBlock>
                         <Border Margin="30,0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1">
                         </Border>
-                        <TextBlock Margin="30,0" FontFamily="Segoe UI Light" TextWrapping="Wrap">Please insert money as shown in the video to complete the transaction.</TextBlock>
-                    </StackPanel>
+                            <ItemsControl ItemsSource = "{Binding Path = Modal}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Margin="30,0" FontFamily="Segoe UI Light" Text="{Binding Path=Instr, Mode=OneWay}" TextWrapping="Wrap"></TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
                     <StackPanel Margin="30,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
                         <Border Margin="0,0,5,0">
                             <Button Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Cancel</Button>
@@ -55,3 +68,6 @@
     </Grid>
     </Border>
 </Window>
+
+    
+    

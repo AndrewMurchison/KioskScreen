@@ -181,8 +181,8 @@
                                     <ColumnDefinition Width="50*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Button Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
-                                <Button Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="0">
+                                <Button Name="card" Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
+                                <Button Name="cash" Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="0">
                                     Cash Payments
                                 </Button>
 

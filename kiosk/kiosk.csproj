@@ -69,8 +69,10 @@
       <DependentUpon>valetinfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="vInfoModel\homeModel.cs" />
+    <Compile Include="vInfoModel\ModalModel.cs" />
     <Compile Include="vInfoModel\vInfo.cs" />
     <Compile Include="vInfoViewModel\homeViewModel.cs" />
+    <Compile Include="vInfoViewModel\ModalViewModel.cs" />
     <Compile Include="vInfoViewModel\vViewModel.cs" />
     <Compile Include="vInfoView\scanbutton.xaml.cs">
       <DependentUpon>scanbutton.xaml</DependentUpon>
@@ -183,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common_Payment By Cash.avi" />
+    <Content Include="credit.avi" />
     <Content Include="KioskScanTicket.wmv" />
     <Resource Include="Images\scanTicket.png" />
     <Resource Include="paycelogo.png" />
