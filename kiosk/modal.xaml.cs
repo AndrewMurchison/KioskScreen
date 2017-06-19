@@ -19,8 +19,10 @@ namespace kiosk
     /// </summary>
     public partial class modal : Window
     {
-        public modal()
+        Window win;
+        public modal(Window window)
         {
+            win = window;
             InitializeComponent();
             
             
@@ -28,6 +30,7 @@ namespace kiosk
         public void close(object sender, RoutedEventArgs e)
         {
             this.Close();
+            win.Opacity = 1.0;
         }
     }
 }

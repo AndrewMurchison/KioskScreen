@@ -72,7 +72,8 @@ namespace kiosk
 
         public void CardClick(object sender, RoutedEventArgs e)
         {
-            Window newin = new modal();
+            Window newin = new modal(this);
+            this.Opacity = 0.1;
             newin.ShowDialog();
         }
 
