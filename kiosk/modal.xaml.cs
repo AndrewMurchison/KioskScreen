@@ -81,6 +81,7 @@ namespace kiosk
                 ldmodal.DataContext = mod;
                 video.Source = new Uri(@"../../Img/credit.avi", UriKind.RelativeOrAbsolute);
             }
+
         }
     }
 }
