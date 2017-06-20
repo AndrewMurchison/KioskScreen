@@ -40,6 +40,11 @@ namespace kiosk
                 message.Text = "A valet worker has been alerted and will assist you shortly";
                 time = 3;
             }
+           else if (name.Equals("scn"))
+            {
+                message.Text = "Ticket already scanned. Please scan any validations/proceed to the payment screen or cancel the transaction.";
+                time = 3;
+            }
             else
             {
                 message.Text = "Ticket Scanning";

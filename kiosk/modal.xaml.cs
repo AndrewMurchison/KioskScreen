@@ -20,14 +20,16 @@ namespace kiosk
     public partial class modal : Window
     {
         Window win;
+
         String name;
         
+
         public modal(Window window, String nm)
         {
             InitializeComponent();
-            
 
 
+           
             name = nm;
             win = window;
 
@@ -46,8 +48,21 @@ namespace kiosk
 
         public void close(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            
+            Button btn = (Button)sender;
+
+            if (btn.Name.Equals("finish")){
+                Window home = new MainWindow();
+                win.Close();
+                home.Show();
+                
+                
+                
+            }
+            
             win.Opacity = 1.0;
+            this.Close();
+            
         }
 
         public void loadmodal(object sender, RoutedEventArgs e)

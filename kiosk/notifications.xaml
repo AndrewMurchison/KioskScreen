@@ -13,12 +13,20 @@
         Title="notifications" Height="300" Width="600">
     <Border CornerRadius="5" BorderBrush="#FFA09F9F"
         BorderThickness="2">
-        <Border Margin="80">
-            <Viewbox>
-            <TextBlock FontSize="16" Name="message" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="0" Source="paycelogo.png" />
+            <Border Grid.Row="1" Margin="100,30">
+                
+            <TextBlock VerticalAlignment="Center" FontSize="20" TextWrapping="Wrap" Name="message" TextAlignment="Center" FontFamily="Segoe UI Light">
             
             </TextBlock>
-        </Viewbox>
+        
         </Border>
+        </Grid>
     </Border>
 </Window>

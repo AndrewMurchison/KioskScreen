@@ -71,7 +71,7 @@
                             <Button Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Cancel</Button>
                         </Border>
                         <Border >
-                            <Button Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Finish</Button>
+                            <Button Name="finish" Click="close" FontFamily="Segoe UI Light" BorderBrush="#FFDEDEDE" BorderThickness="0">Finish</Button>
                         </Border>
                             </StackPanel>
                         </Viewbox>

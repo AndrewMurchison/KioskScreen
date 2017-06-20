@@ -62,15 +62,6 @@
     <Compile Include="notifications.xaml.cs">
       <DependentUpon>notifications.xaml</DependentUpon>
     </Compile>
-    <Compile Include="scanbox.xaml.cs">
-      <DependentUpon>scanbox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Scanscreen.xaml.cs">
-      <DependentUpon>Scanscreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="valetinfo.xaml.cs">
-      <DependentUpon>valetinfo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="vInfoModel\homeModel.cs" />
     <Compile Include="vInfoModel\ModalModel.cs" />
     <Compile Include="vInfoModel\vInfo.cs" />
@@ -111,19 +102,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="scanbox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Scanscreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\styledict.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="valetinfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,31 +143,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Home_5699_32.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="AddOrInsertConditionalRule_13123_24.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Home_5699.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="house_16xSM.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="house_16xMD.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="house_16xLG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="playbtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="home_1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="glyphicons-21-home.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common_Payment By Cash.avi" />

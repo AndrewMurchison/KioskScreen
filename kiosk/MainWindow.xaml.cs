@@ -20,6 +20,7 @@ namespace kiosk
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
@@ -27,7 +28,8 @@ namespace kiosk
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
             InitializeComponent();
-            
+            valetviewctrl.DataContext = null;
+           
            
         }
 
@@ -50,10 +52,11 @@ namespace kiosk
             homedata.LoadScreen1();
             MainGrid.DataContext = homedata;
 
-            
+            cash.IsEnabled = false;
+            card.IsEnabled = false;
 
         }
-        public void renderpg(object sender, KeyEventArgs e)
+        public void scantik(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
@@ -61,13 +64,39 @@ namespace kiosk
                 homedata.LoadScreen2();
                 MainGrid.DataContext = homedata;
 
+                if (valetviewctrl.DataContext != null)
+                {
+                    Button scanned = new Button();
+                    scanned.Name = "scn";
+                    popup(scanned, e);
+                }
+                else
+                {
+                    
+                    popup(sender, e);
+                }
                 kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
                 vdata.LoadTicket();
                 valetviewctrl.DataContext = vdata;
+                vdata.ClearTicket();
+                cash.IsEnabled = true;
+                card.IsEnabled = true;
                 
-                
-                popup(sender, e);
             }
+        }
+
+        public void cancelscan(object sender, RoutedEventArgs e)
+        {
+            kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
+            homedata.LoadScreen1();
+            MainGrid.DataContext = homedata;
+            valetviewctrl.DataContext = null;
+
+            cash.IsEnabled = false;
+            card.IsEnabled = false;
+        
+
+
         }
 
         public void popup(object sender, RoutedEventArgs e)
@@ -77,23 +106,16 @@ namespace kiosk
             noti.ShowDialog();
         }
 
-        public void CashClick(object sender, RoutedEventArgs e)
-
+        public void payClick(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
             Window newin = new modal(this, button.Name);
             this.Opacity = 0.1;
             newin.ShowDialog();
+           
         }
 
-        public void CardClick(object sender, RoutedEventArgs e)
-        {
-            var button = (Button)sender;
-            Window newin = new modal(this, button.Name);
-            this.Opacity = 0.1;
-            
-            newin.ShowDialog();
-        }
+        
 
 
     }

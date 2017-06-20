@@ -22,6 +22,7 @@
             <Style x:Key="Fonts" TargetType="Grid">
                 <Style.Resources>
                     <Style TargetType="{x:Type TextBlock}">
+                        
                         <Setter Property="FontFamily" Value="Segoe UI Light"></Setter>
                     </Style>
                     <Style TargetType="{x:Type Button}">
@@ -29,8 +30,7 @@
                     </Style>
                 </Style.Resources>
             </Style>
-            
-
+   
         </UserControl.Resources>
         <Grid Name="MainGrid" Margin="10" Style="{StaticResource Fonts}" Loaded="homescreenctrl">
             <Grid.ColumnDefinitions>
@@ -58,9 +58,9 @@
                             </Border>
                         </Viewbox>
                         <Viewbox Grid.Row="1" >
-                            <Border Margin="80,30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1" >
+                            <Border Margin="80,30" BorderBrush="DarkGray" BorderThickness="1" >
                             
-                            <TextBox Name="entr" KeyDown="renderpg" TextAlignment="Center" Text="Scan Ticket"></TextBox>
+                            <TextBox Name="entr" KeyDown="scantik" TextAlignment="Center" Text="Scan Ticket"></TextBox>
                         </Border>
                         </Viewbox>
                     </Grid>
@@ -72,7 +72,7 @@
                 
                 <Border Grid.Row="1" Style="{StaticResource borders}">
                     <Viewbox>
-                        <Border Margin="80,30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
+                        <Border Margin="80,30" BorderBrush="DarkGray" BorderThickness="1">
                         <Image Source="/Images/scanTicket.png" Stretch="Fill" />
                     </Border>
                     </Viewbox>
@@ -102,7 +102,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <TextBlock Name="time" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black">
+                        <TextBlock Name="time" FontSize="26" TextAlignment="Center" Foreground="Black">
                         </TextBlock>
                         </StackPanel>
                         </Viewbox>
@@ -175,12 +175,13 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="10*"></RowDefinition>
                                 <RowDefinition Height="20*"></RowDefinition>
-                                <RowDefinition Height="70*"></RowDefinition>
+                                <RowDefinition Height="60*"></RowDefinition>
+                                <RowDefinition Height="10*"></RowDefinition>
                                 
                             </Grid.RowDefinitions>
                             <Border Grid.Row="0" BorderBrush="DarkGray" BorderThickness="0,0,0,1">
                                 <Viewbox>
-                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center">Payment Options</TextBlock>
+                                    <TextBlock TextAlignment="Center">Payment Options</TextBlock>
                                 </Viewbox>
                             </Border>
                             <Grid Grid.Row="1">
@@ -189,17 +190,22 @@
                                     <ColumnDefinition Width="50*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <Viewbox Margin="0,10,0,0" MaxHeight="70" Grid.Column="0" Stretch="Fill">
-                                    <Button Name="card" Click="CashClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
+                               
+                                    <Button Name="card" FontSize="16" Click="payClick" Grid.Column="0" BorderBrush="#FFDEDEDE" BorderThickness="0">Debit/Credit</Button>
 
-                                </Viewbox>
-                                <Viewbox Margin="0,10,0,0" MaxHeight="70" Grid.Column="1" Stretch="Fill">
-                                    <Button Name="cash" Click="CardClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="1">
+                               
+                                
+                                    <Button Name="cash" FontSize="16" Click="payClick" Grid.Column="1" BorderBrush="#FFDEDEDE" BorderThickness="1">
                                         Cash Payments
                                     </Button>
-                                </Viewbox>
+                                
 
                             </Grid>
+
+
+                            <Button Name="Cancel" Click="cancelscan" FontSize="16" Grid.Row="3" BorderBrush="#FFDEDEDE" BorderThickness="1" Content="Cancel">
+                               
+                            </Button>
                         </Grid>
                     </Border>
                     

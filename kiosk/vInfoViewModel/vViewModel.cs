@@ -25,5 +25,15 @@ namespace kiosk.vInfoViewModel
 
             Tik = ticket;
         }
+
+        public void ClearTicket()
+        {
+            ObservableCollection<ticketinfo> ticket = new ObservableCollection<ticketinfo>();
+
+            ticket.Add(new ticketinfo { TicketNum = null, Validations = null, Amt = null, Payopt = null });
+
+
+            Tik = ticket;
+        }
     }
 }
