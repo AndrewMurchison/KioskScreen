@@ -149,6 +149,7 @@
     <Content Include="Common_Payment By Cash.avi" />
     <Content Include="credit.avi" />
     <Content Include="KioskScanTicket.wmv" />
+    <Resource Include="scanValidation.png" />
     <Resource Include="Images\scanTicket.png" />
     <Resource Include="paycelogo.png" />
     <Content Include="Images\scanValidation.png" />

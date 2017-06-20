@@ -73,7 +73,7 @@
                 <Border Grid.Row="1" Style="{StaticResource borders}">
                     <Viewbox>
                         <Border Margin="80,30" BorderBrush="DarkGray" BorderThickness="1">
-                        <Image Source="/Images/scanTicket.png" Stretch="Fill" />
+                        <Image Name="tikimg" Stretch="Fill" />
                     </Border>
                     </Viewbox>
 
@@ -163,9 +163,13 @@
                 <Border Grid.Row="0" Style="{StaticResource borders}">
                     
                     <Border Margin="30" Background="#FFDEDEDE" BorderBrush="DarkGray" BorderThickness="1">
-                        <StackPanel Orientation="Vertical">
-                            <Button Click="popup" Name="help">Help</Button>
-                        </StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"></RowDefinition>
+                                <RowDefinition Height="90*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Button Name="help" Click="popup" FontSize="16" Grid.Row="0" BorderBrush="#FFDEDEDE" BorderThickness="1" Content="Help"></Button>
+                        </Grid>
                 </Border>
                 </Border>
                 

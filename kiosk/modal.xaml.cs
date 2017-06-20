@@ -53,11 +53,11 @@ namespace kiosk
 
             if (btn.Name.Equals("finish")){
                 Window home = new MainWindow();
-                win.Close();
+                
                 home.Show();
-                
-                
-                
+                win.Close();
+
+
             }
             
             win.Opacity = 1.0;

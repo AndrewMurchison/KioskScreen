@@ -29,8 +29,10 @@ namespace kiosk
             dispatcherTimer.Start();
             InitializeComponent();
             valetviewctrl.DataContext = null;
-           
-           
+            tikimg.Source = new BitmapImage(new Uri(@"/Images/scanTicket.png", UriKind.Relative));
+
+
+
         }
 
        public void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace kiosk
                 vdata.ClearTicket();
                 cash.IsEnabled = true;
                 card.IsEnabled = true;
-                
+                tikimg.Source = new BitmapImage(new Uri(@"scanValidation.png", UriKind.Relative));
             }
         }
 
@@ -94,7 +96,7 @@ namespace kiosk
 
             cash.IsEnabled = false;
             card.IsEnabled = false;
-        
+            tikimg.Source = new BitmapImage(new Uri(@"/Images/scanTicket.png", UriKind.Relative));
 
 
         }
