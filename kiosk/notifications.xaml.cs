@@ -50,6 +50,16 @@ namespace kiosk
                 message.Text = "Invalid Ticket! Please scan a valid ticket.";
                 time = 3;
             }
+            else if (name.Equals("vValid"))
+            {
+                message.Text = "Validation Scanned";
+                time = 1;
+            }
+            else if (name.Equals("vInvalid"))
+            {
+                message.Text = "Invalid Validation Ticket! Scan active Validation or proceed to payment checkout.";
+                time = 3;
+            }
             else
             {
                 message.Text = "Ticket Scanning";

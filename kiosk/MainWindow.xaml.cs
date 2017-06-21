@@ -24,6 +24,7 @@ namespace kiosk
     public partial class MainWindow : Window
     {
         mockdb.Ticket searchedTicket;
+        kiosk.vInfoViewModel.vViewModel lddata;
         public MainWindow()
         {
            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
@@ -67,22 +68,37 @@ namespace kiosk
             if (e.Key == Key.Return)
             {
 
-
+                String scanned = entr.Text;
                 if (valetviewctrl.DataContext != null)
                 {
+                    
+                    kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
+                    bool isValid = vdata.searchValidations(searchedTicket, scanned);
+                    
+                    if (isValid)
+                    {
+                        popup("vValid");
+                        lddata = vdata;
+                        valetviewctrl.DataContext = vdata;
+                    }
+                    else
+                    {
+                        popup("vInvalid");
+                        valetviewctrl.DataContext = lddata;
+                    }
+                    
 
-                    popup("scn");
                 }
                 else
                 {
 
-                    String scannedtik = entr.Text;
+                    
                     kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
-                    vdata.searchTickets(scannedtik);
+                    vdata.searchTickets(scanned);
                     searchedTicket = vdata.getTicket();
                     if (searchedTicket == null)
                     {
-                        vdata.ClearTicket();
+                        
                         popup("invalid");
                     }
                     else
@@ -93,7 +109,8 @@ namespace kiosk
                         MainGrid.DataContext = homedata;
 
                         valetviewctrl.DataContext = vdata;
-                        vdata.ClearTicket();
+                        lddata = vdata;
+                        
                         cash.IsEnabled = true;
                         card.IsEnabled = true;
                         tikimg.Source = new BitmapImage(new Uri(@"scanValidation.png", UriKind.Relative));
@@ -132,7 +149,7 @@ namespace kiosk
         public void payClick(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
-            Window newin = new modal(this, button.Name, searchedTicket);
+            Window newin = new modal(this, button.Name, lddata);
             this.Opacity = 0.1;
             newin.ShowDialog();
            

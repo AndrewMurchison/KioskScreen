@@ -19,12 +19,12 @@ namespace kiosk.db
         public Validations[] populate()
         {
             Validations[] valid;
-            valid = new Validations[5];
+            valid = new Validations[1];
             valid[0] = new Validations("HP", 7.00);
-            valid[1] = new Validations("dog", 9.00);
-            valid[2] = new Validations("uncle", 2.00);
-            valid[3] = new Validations("senior", 3.00);
-            valid[4] = new Validations("trainwreck", 14.00);
+            //valid[1] = new Validations("dog", 9.00);
+            //valid[2] = new Validations("uncle", 2.00);
+            //valid[3] = new Validations("senior", 3.00);
+            //valid[4] = new Validations("trainwreck", 14.00);
             return valid;
         }
     }

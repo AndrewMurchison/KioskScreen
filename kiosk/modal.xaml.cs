@@ -26,12 +26,10 @@ namespace kiosk
 
 
 
-        public modal(Window window, String nm, mockdb.Ticket sTicket)
+        public modal(Window window, String nm, kiosk.vInfoViewModel.vViewModel sTicket)
         {
             InitializeComponent();
-            if (sTicket != null) { 
-                amtdue.Text = "Amount Due: $" + sTicket.total.ToString();
-            }
+            amount.DataContext = sTicket;
            
             name = nm;
             win = window;

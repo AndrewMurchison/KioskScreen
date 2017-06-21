@@ -41,17 +41,29 @@ namespace kiosk.vInfoViewModel
             return tiklist;
         }
 
-        public void LoadTicket(mockdb.Ticket ticketinfo)
+        public void LoadTicket(mockdb.Ticket ticketinfo, Validations validate)
         {
             ObservableCollection<ticketinfo> ticket = new ObservableCollection<ticketinfo>();
-
+            
             if (ticketinfo == null)
             {
 
                 ticket.Add(new ticketinfo { TicketNum = "Invalid Ticket", Validations = "", Amt = ""});
             }
-            else { 
-                ticket.Add(new ticketinfo { TicketNum = ticketinfo.tiknum, Validations = ticketinfo.valid[0].nm, Amt = ticketinfo.total.ToString()});
+            else {
+                
+                if (validate == null)
+                {
+                    
+                    ticket.Add(new ticketinfo { TicketNum = ticketinfo.tiknum, Validations = "", Amt = ticketinfo.total.ToString() });
+                }
+                else
+                {
+                    
+                    double total = ticketinfo.total - validate.amount;
+                    ticket.Add(new ticketinfo { TicketNum = ticketinfo.tiknum, Validations = validate.nm, Amt = total.ToString() });
+                }
+                
             }
             searchedTicket = ticketinfo;
 
@@ -85,15 +97,30 @@ namespace kiosk.vInfoViewModel
                     found = ticketlist[i];
                 }
             }
-            if (found == null)
+
+            LoadTicket(found, null);
+            
+            
+        }
+
+        public Boolean searchValidations(mockdb.Ticket num, String validations)
+        {
+            Validations[] validation = num.valid;
+            Validations validate = null;
+            for(int i = 0; i<validation.Length; i++)
             {
-                
-                LoadTicket(found);
+                if (validations.Equals(validation[i].nm))
+                {
+                    validate = validation[i];
+                }
             }
-            else
+            if (validate == null)
             {
-                LoadTicket(found);
+                return false;
             }
+            LoadTicket(num, validate);
+            return true;
+
         }
         
     }

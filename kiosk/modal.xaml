@@ -49,10 +49,15 @@
                         </Grid.RowDefinitions>
                             <Border Grid.Row="0" Margin="30,0" BorderBrush="#FFA09F9F" BorderThickness="0,0,0,1">
                             <Viewbox Name="amount">
-                        
-                              <TextBlock Name="amtdue" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" Margin="0,10"></TextBlock>
-                                        
-                            
+                                <ItemsControl ItemsSource = "{Binding Path = Tik}">
+
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Amt, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Light" Margin="0,10"></TextBlock>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
                             </Viewbox>
                         </Border>
                         <Border Grid.Row="1" Margin="30,0" >

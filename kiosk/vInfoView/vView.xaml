@@ -57,7 +57,7 @@
                             <StackPanel Grid.Column="1" Orientation="Vertical" Style="{StaticResource AlignCenter}">
 
                                 <Border Background="#FF22A6F1">
-                                    <TextBlock Text="{Binding Path=TicketNum, Mode=OneWay}"></TextBlock>
+                                    <TextBlock Name="num" Text="{Binding Path=TicketNum, Mode=OneWay}"></TextBlock>
                                 </Border>
                                 <Border Background="#FF51B87B">
                                     <TextBlock Text="{Binding Path=Validations, Mode=OneWay}"></TextBlock>
