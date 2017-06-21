@@ -16,7 +16,7 @@ namespace kiosk.vInfoModel
         private string ticketnum;
         private string validations;
         private string amt;
-        private string payopt;
+      
 
         public string TicketNum
         {
@@ -43,7 +43,13 @@ namespace kiosk.vInfoModel
 
             set
             {
-                validations = value;
+                if (validations != value)
+                {
+                    validations = value;
+                    RaisePropertyChanged("Validations");
+                    RaisePropertyChanged("TicketInfo");
+
+                }
             }
         }
 
@@ -53,25 +59,22 @@ namespace kiosk.vInfoModel
 
             set
             {
-                amt = value;
+                if (amt != value)
+                {
+                    amt = value;
+                    RaisePropertyChanged("Amt");
+                    RaisePropertyChanged("TicketInfo");
+
+                }
             }
         }
 
-        public string Payopt
-        {
-            get { return payopt; }
-
-            set
-            {
-                payopt = value;
-            }
-        }
 
         public string TicketInfo
         {
             get
             {
-                return ticketnum + " " + validations + " " + amt + " " + payopt;
+                return ticketnum + " " + validations + " " + amt;
             }
         }
 

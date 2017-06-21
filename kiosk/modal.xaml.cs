@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using kiosk.db;
 
 namespace kiosk
 {
@@ -23,11 +24,12 @@ namespace kiosk
 
         String name;
         
+        
 
-        public modal(Window window, String nm)
+        public modal(Window window, String nm, mockdb.Ticket sTicket)
         {
             InitializeComponent();
-
+            amtdue.Text = "Amount Due: $" + sTicket.total.ToString();
 
            
             name = nm;

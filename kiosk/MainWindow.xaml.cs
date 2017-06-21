@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using kiosk.db;
+
 
 namespace kiosk
 {
@@ -20,7 +23,7 @@ namespace kiosk
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        mockdb.Ticket searchedTicket;
         public MainWindow()
         {
            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
@@ -77,8 +80,10 @@ namespace kiosk
                     
                     popup(sender, e);
                 }
+                String scannedtik = entr.Text;
                 kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
-                vdata.LoadTicket();
+                vdata.searchTickets(scannedtik);
+                searchedTicket = vdata.getTicket();
                 valetviewctrl.DataContext = vdata;
                 vdata.ClearTicket();
                 cash.IsEnabled = true;
@@ -111,7 +116,7 @@ namespace kiosk
         public void payClick(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
-            Window newin = new modal(this, button.Name);
+            Window newin = new modal(this, button.Name, searchedTicket);
             this.Opacity = 0.1;
             newin.ShowDialog();
            

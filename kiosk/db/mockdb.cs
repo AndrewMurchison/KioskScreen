@@ -10,11 +10,11 @@ namespace kiosk.db
     {
         public class Ticket
         {
-            public int tiknum;
+            public String tiknum;
             public Validations[] valid;
             public Double total;
 
-            public Ticket(int tik, Validations[] v, Double amt)
+            public Ticket(String tik, Validations[] v, Double amt)
             {
                 tiknum = tik;
                 valid = v;
