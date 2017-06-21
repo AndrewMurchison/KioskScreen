@@ -76,7 +76,7 @@ namespace kiosk
                     bool isValid = vdata.searchValidations(searchedTicket, scanned);
                     
                     if (isValid)
-                    {
+                    { 
                         popup("vValid");
                         lddata = vdata;
                         valetviewctrl.DataContext = vdata;
