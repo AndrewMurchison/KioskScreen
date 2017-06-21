@@ -63,32 +63,42 @@ namespace kiosk
         }
         public void scantik(object sender, KeyEventArgs e)
         {
+            var name = (Control)sender;
             if (e.Key == Key.Return)
             {
-                kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
-                homedata.LoadScreen2();
-                MainGrid.DataContext = homedata;
+
 
                 if (valetviewctrl.DataContext != null)
                 {
-                    Button scanned = new Button();
-                    scanned.Name = "scn";
-                    popup(scanned, e);
+
+                    popup("scn");
                 }
                 else
                 {
-                    
-                    popup(sender, e);
+
+                    String scannedtik = entr.Text;
+                    kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
+                    vdata.searchTickets(scannedtik);
+                    searchedTicket = vdata.getTicket();
+                    if (searchedTicket == null)
+                    {
+                        vdata.ClearTicket();
+                        popup("invalid");
+                    }
+                    else
+                    {
+                        popup(name.Name);
+                        kiosk.vInfoViewModel.homeViewModel homedata = new kiosk.vInfoViewModel.homeViewModel();
+                        homedata.LoadScreen2();
+                        MainGrid.DataContext = homedata;
+
+                        valetviewctrl.DataContext = vdata;
+                        vdata.ClearTicket();
+                        cash.IsEnabled = true;
+                        card.IsEnabled = true;
+                        tikimg.Source = new BitmapImage(new Uri(@"scanValidation.png", UriKind.Relative));
+                    }
                 }
-                String scannedtik = entr.Text;
-                kiosk.vInfoViewModel.vViewModel vdata = new kiosk.vInfoViewModel.vViewModel();
-                vdata.searchTickets(scannedtik);
-                searchedTicket = vdata.getTicket();
-                valetviewctrl.DataContext = vdata;
-                vdata.ClearTicket();
-                cash.IsEnabled = true;
-                card.IsEnabled = true;
-                tikimg.Source = new BitmapImage(new Uri(@"scanValidation.png", UriKind.Relative));
             }
         }
 
@@ -106,10 +116,16 @@ namespace kiosk
 
         }
 
-        public void popup(object sender, RoutedEventArgs e)
+        public void msgdelegator(object sender, RoutedEventArgs e)
         {
             var name = (Control)sender;
-            Window noti = new notifications(name.Name,System.Windows.SystemParameters.PrimaryScreenWidth, System.Windows.SystemParameters.PrimaryScreenHeight);
+            popup(name.Name);
+        }
+
+        public void popup(String name)
+        {
+            
+            Window noti = new notifications(name,System.Windows.SystemParameters.PrimaryScreenWidth, System.Windows.SystemParameters.PrimaryScreenHeight);
             noti.ShowDialog();
         }
 

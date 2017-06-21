@@ -23,14 +23,15 @@ namespace kiosk
         Window win;
 
         String name;
-        
-        
+
+
 
         public modal(Window window, String nm, mockdb.Ticket sTicket)
         {
             InitializeComponent();
-            amtdue.Text = "Amount Due: $" + sTicket.total.ToString();
-
+            if (sTicket != null) { 
+                amtdue.Text = "Amount Due: $" + sTicket.total.ToString();
+            }
            
             name = nm;
             win = window;

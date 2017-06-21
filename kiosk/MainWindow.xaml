@@ -168,7 +168,7 @@
                                 <RowDefinition Height="10*"></RowDefinition>
                                 <RowDefinition Height="90*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Button Name="help" Click="popup" FontSize="16" Grid.Row="0" BorderBrush="#FFDEDEDE" BorderThickness="1" Content="Help"></Button>
+                            <Button Name="help" Click="msgdelegator" FontSize="16" Grid.Row="0" BorderBrush="#FFDEDEDE" BorderThickness="1" Content="Help"></Button>
                         </Grid>
                 </Border>
                 </Border>
